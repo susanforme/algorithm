@@ -1,0 +1,33 @@
+{
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
+  "C_Cpp.default.compilerPath": "C:\\mingw64\\bin\\g++.exe",
+  "C_Cpp.default.cppStandard": "c++20",
+  "debug.onTaskErrors": "abort",
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "stdio.h": "c",
+    "atomic": "cpp",
+    "cstdint": "cpp",
+    "stdint.h": "c",
+    "string.h": "c",
+    "stdbool.h": "c",
+    "algorithm": "c",
+    "numeric": "c",
+    "functional": "c",
+    "hotel.h": "c",
+    "ctype.h": "c",
+    "array": "c",
+    "deque": "c",
+    "string": "c",
+    "unordered_map": "c",
+    "vector": "c",
+    "string_view": "c",
+    "initializer_list": "c",
+    "ranges": "c",
+    "stdlib.h": "c",
+    "cmath": "c",
+    "*.tcc": "c"
+  }
+}
