@@ -19,9 +19,21 @@ bool initList(LinkList *list)
     return false;
   }
   // 初始化下个节点
-  (*list)->next = NULL;
+  (*list)->next = *list;
   (*list)->data = 0;
   return true;
+}
+
+// 判断是否为空
+bool isEmpty(LinkList list)
+{
+  return list->next == list;
+}
+
+// 判断p节点是否是尾结点
+bool isTail(LinkList list, LNode *p)
+{
+  return p->next == list;
 }
 
 // 平均复杂度 O(n)
@@ -121,17 +133,6 @@ bool deleteList(LinkList list, int i)
     return false;
   }
   p->next = p->next->next;
-  return true;
-}
-
-// 时间复杂度O(1)
-bool deleteNode(LNode *p)
-{
-  LNode *n = p->next;
-  p->data = p->next->data;
-  // 可能越界.... 但是考试一般不会扣分
-  p->next = p->next->next;
-  free(n);
   return true;
 }
 
