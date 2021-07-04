@@ -29,6 +29,8 @@
     "stdlib.h": "c",
     "cmath": "c",
     "*.tcc": "c",
-    "_mingw_off_t.h": "c"
-  }
+    "_mingw_off_t.h": "c",
+    "time.h": "c"
+  },
+  // "C_Cpp.errorSquiggles": "Disabled"
 }
