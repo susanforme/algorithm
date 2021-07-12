@@ -30,7 +30,8 @@
     "cmath": "c",
     "*.tcc": "c",
     "_mingw_off_t.h": "c",
-    "time.h": "c"
+    "time.h": "c",
+    "type_traits": "c"
   },
   // "C_Cpp.errorSquiggles": "Disabled"
 }
