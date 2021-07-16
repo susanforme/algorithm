@@ -9,10 +9,15 @@ typedef struct BSTNode
   struct BSTNode *lchild, *rchild;
 } BSTNode, *BSTree;
 
+typedef BSTNode Position;
 // 递归搜索版 最坏空间复杂度 O(h) h为树高度
 BSTNode *BSTNodeSearch(BSTree T, int key)
 {
   BSTNode *N = T;
+  if (N == NULL)
+  {
+    return NULL;
+  }
   if (key == N->key)
   {
     return N;
@@ -114,6 +119,47 @@ bool BSTInsertV2(BSTree *T, int key)
   return true;
 }
 
+// 插入非递归实现
+bool BSTInsertV3(BSTree *T, int key)
+{
+  BSTNode *N = *T;
+  while (N != NULL)
+  {
+    BSTNode *new = (BSTNode *)malloc(sizeof(BSTNode));
+    new->key = key;
+    new->rchild = NULL;
+    new->lchild = NULL;
+    if (key = N->key)
+    {
+      return false;
+    }
+    if (key > N->key)
+    {
+      if (N->rchild == NULL)
+      {
+        N->rchild = new;
+        return true;
+      }
+      else
+      {
+        N = N->rchild;
+      }
+    }
+    if (key > N->key)
+    {
+      if (N->lchild == NULL)
+      {
+        N->lchild = new;
+        return true;
+      }
+      else
+      {
+        N = N->lchild;
+      }
+    }
+    free(new);
+  }
+}
 // 找出最小元素 并返回其地址
 BSTNode *FindMin(BSTree T)
 {
