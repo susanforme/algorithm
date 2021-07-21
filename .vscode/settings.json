@@ -31,7 +31,8 @@
     "*.tcc": "c",
     "_mingw_off_t.h": "c",
     "time.h": "c",
-    "type_traits": "c"
+    "type_traits": "c",
+    "limits": "c"
   },
   // "C_Cpp.errorSquiggles": "Disabled"
 }
