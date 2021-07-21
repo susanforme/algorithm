@@ -1,6 +1,6 @@
 // 邻接表法 适合稀疏图
 #include <stdlib.h>
-#define MAXVERTEXNUM 100
+#define MAX_VERTEX_NUM 100
 
 // 边权值
 typedef int InfoType;
@@ -18,7 +18,7 @@ typedef struct VNode
   VertexType data;
   // 指向第一条弧
   ArcNode *first;
-} VNode, AdjList[MAXVERTEXNUM];
+} VNode, AdjList[MAX_VERTEX_NUM];
 
 typedef struct
 {

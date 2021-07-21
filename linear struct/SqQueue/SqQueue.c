@@ -14,9 +14,9 @@ void init_queue(SqQueue *s)
   s->front = s->rear = 0;
 }
 
-bool is_empty(SqQueue *s)
+bool is_empty(SqQueue s)
 {
-  return s->rear == s->front;
+  return s.rear == s.front;
 }
 
 // 入队
@@ -38,7 +38,7 @@ bool en_queue(SqQueue *s, int x)
 // 出队
 bool de_queue(SqQueue *s, int *x)
 {
-  if (is_empty(s))
+  if (is_empty(*s))
   {
     return false;
   }
