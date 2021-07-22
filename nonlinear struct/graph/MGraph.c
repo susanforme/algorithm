@@ -1,6 +1,6 @@
 // 领接矩阵法 适合稠密图
 #define MAX_VERTEX_NUM 100
-#define INFINITY (int)(~0U >> 1)
+#define INFINITY 0X7fffffff
 typedef char VertexType;
 typedef int EdgeType;
 typedef struct MGraph

@@ -2,7 +2,7 @@
 #include <stdbool.h>
 // 最大顶点数
 #define MAX_VERTEX_NUM 100
-#define INFINITY (int)(~0U >> 1)
+#define INFINITY 0X7fffffff
 #define MAXSIZE 10
 
 typedef struct
@@ -85,10 +85,9 @@ void BFS(MGraph G, int v)
   {
     // 顶点v出队
     de_queue(&Q, &v);
-    int w = 0;
+    int w = FirstNeighbor(G, v);
     while (w >= 0)
     {
-      w = FirstNeighbor(G, v);
       // w为v未访问的邻接顶点
       if (!visited[w])
       {
