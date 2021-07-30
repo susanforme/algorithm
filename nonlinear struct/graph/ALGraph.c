@@ -1,5 +1,4 @@
 // 邻接表法 适合稀疏图
-#include <stdlib.h>
 #define MAX_VERTEX_NUM 100
 
 // 边权值
