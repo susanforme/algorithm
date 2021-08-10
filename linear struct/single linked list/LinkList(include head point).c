@@ -23,7 +23,6 @@ bool initList(LinkList *list)
   (*list)->data = 0;
   return true;
 }
-
 // 平均复杂度 O(n)
 LNode *getElem(LinkList list, int i)
 {

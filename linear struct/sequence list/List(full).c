@@ -51,7 +51,7 @@ bool insertList(SqList *list, int i, int e)
   return true;
 }
 
-// 通过位置 删除链表中一个值,最好情况时间复杂度O(1) 平均情况O(1)
+// 通过位置 删除链表中一个值,最好情况时间复杂度O(1) 平均情况O(n)
 bool deleteList(SqList *list, int i)
 {
   if (i > list->length + 1 || i < 1)
