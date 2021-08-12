@@ -1,9 +1,8 @@
-// 题目链接 http://t.hk.uy/5W9
-#include "stdio.h"
+// 稀疏矩阵的行优先存储表示
+#include <stdio.h>
 #define MAXSIZE 30
 #define COLUMN 6
 #define ROW 5
-
 typedef struct Triple
 {
   int i, j, v;
@@ -30,6 +29,18 @@ void transform_v1(int matrix[ROW][COLUMN], TsMatrix *m)
     }
   }
 }
+// 稀疏矩阵转置
+
+void transposition(TsMatrix *t)
+{
+  // 直接将三元组转置即可
+  for (int i = 0; i < t->len; i++)
+  {
+    int temp = t->data[i].i;
+    t->data[i].i = t->data[i].j;
+    t->data[i].j = temp;
+  }
+}
 
 // 稀疏矩阵转为三元组存储后将其展示
 
@@ -46,5 +57,6 @@ int main(void)
   // 简要初始化
   m.len = 0;
   transform_v1(matrix, &m);
+  transposition(&m);
   return 0;
 }
