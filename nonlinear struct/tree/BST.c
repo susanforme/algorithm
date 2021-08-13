@@ -56,11 +56,11 @@ bool BSTInsert(BSTree *T, int key)
   {
     if (N->rchild == NULL)
     {
-      BSTNode *newNode = (BSTNode *)malloc(sizeof(BSTNode));
-      newNode->key = key;
-      newNode->lchild = NULL;
-      newNode->rchild = NULL;
-      N->rchild = newNode;
+      BSTNode *newNodeNode = (BSTNode *)malloc(sizeof(BSTNode));
+      newNodeNode->key = key;
+      newNodeNode->lchild = NULL;
+      newNodeNode->rchild = NULL;
+      N->rchild = newNodeNode;
       return true;
     }
     return BSTInsert(&(N->rchild), key);
@@ -69,11 +69,11 @@ bool BSTInsert(BSTree *T, int key)
   {
     if (N->lchild == NULL)
     {
-      BSTNode *newNode = (BSTNode *)malloc(sizeof(BSTNode));
-      newNode->key = key;
-      newNode->lchild = NULL;
-      newNode->rchild = NULL;
-      N->lchild = newNode;
+      BSTNode *newNodeNode = (BSTNode *)malloc(sizeof(BSTNode));
+      newNodeNode->key = key;
+      newNodeNode->lchild = NULL;
+      newNodeNode->rchild = NULL;
+      N->lchild = newNodeNode;
       return true;
     }
     return BSTInsert(&(N->lchild), key);
@@ -104,17 +104,17 @@ bool BSTInsertV2(BSTree *T, int key)
       isLeft = true;
     }
   }
-  BSTNode *newNode = (BSTNode *)malloc(sizeof(BSTNode));
-  newNode->key = key;
-  newNode->lchild = NULL;
-  newNode->rchild = NULL;
+  BSTNode *newNodeNode = (BSTNode *)malloc(sizeof(BSTNode));
+  newNodeNode->key = key;
+  newNodeNode->lchild = NULL;
+  newNodeNode->rchild = NULL;
   if (isLeft)
   {
-    F->lchild = newNode;
+    F->lchild = newNodeNode;
   }
   else
   {
-    F->rchild = newNode;
+    F->rchild = newNodeNode;
   }
   return true;
 }
@@ -125,10 +125,10 @@ bool BSTInsertV3(BSTree *T, int key)
   BSTNode *N = *T;
   while (N != NULL)
   {
-    BSTNode *new = (BSTNode *)malloc(sizeof(BSTNode));
-    new->key = key;
-    new->rchild = NULL;
-    new->lchild = NULL;
+    BSTNode *newNode = (BSTNode *)malloc(sizeof(BSTNode));
+    newNode->key = key;
+    newNode->rchild = NULL;
+    newNode->lchild = NULL;
     if (key = N->key)
     {
       return false;
@@ -137,7 +137,7 @@ bool BSTInsertV3(BSTree *T, int key)
     {
       if (N->rchild == NULL)
       {
-        N->rchild = new;
+        N->rchild = newNode;
         return true;
       }
       else
@@ -149,7 +149,7 @@ bool BSTInsertV3(BSTree *T, int key)
     {
       if (N->lchild == NULL)
       {
-        N->lchild = new;
+        N->lchild = newNode;
         return true;
       }
       else
@@ -157,7 +157,7 @@ bool BSTInsertV3(BSTree *T, int key)
         N = N->lchild;
       }
     }
-    free(new);
+    free(newNode);
   }
 }
 // 找出最小元素 并返回其地址
