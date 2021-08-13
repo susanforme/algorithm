@@ -1,27 +1,26 @@
 {
-  "version": "0.2.0",
   "configurations": [
     {
-      "name": "g++.exe build and debug active file",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "MIMode": "gdb",
       "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
+      "cwd": "${fileDirname}",
       "environment": [],
       "externalConsole": false,
-      "MIMode": "gdb",
+      "internalConsoleOptions": "neverOpen",
       "miDebuggerPath": "C:\\mingw64\\bin\\gdb.exe",
+      "name": "gcc single file debug",
+      "preLaunchTask": "gcc single file build",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "request": "launch",
       "setupCommands": [
         {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
+          "ignoreFailures": true,
+          "text": "-enable-pretty-printing"
         }
       ],
-      "preLaunchTask": "g++.exe build active file",
-      "internalConsoleOptions": "neverOpen"
+      "stopAtEntry": false,
+      "type": "cppdbg"
     }
-  ]
+  ],
+  "version": "0.2.0"
 }

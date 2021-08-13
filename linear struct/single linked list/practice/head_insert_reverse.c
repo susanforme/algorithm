@@ -8,15 +8,15 @@ typedef struct LNode
   struct LNode *next;
 } LNode, *LinkList;
 
-void head_insert_reverse(LinkList list, LinkList *newList)
+void head_insert_reverse(LinkList list, LinkList newList)
 {
   LNode *p = list->next;
   while (p != NULL)
   {
     LNode *newP = (LNode *)malloc(sizeof(LNode));
     newP->data = p->data;
-    newP->next = (*newList)->next;
-    (*newList)->next = newP;
+    newP->next = newList->next;
+    newList->next = newP;
     p = p->next;
   }
 }
@@ -80,6 +80,6 @@ int main(void)
   insertList(list, 1, 23);
   insertList(list, 1, 22);
   insertList(list, 1, 99);
-  head_insert_reverse(list, &newList);
+  head_insert_reverse(list, newList);
   return 0;
 }
