@@ -7,7 +7,7 @@
       "command": "C:\\mingw64\\bin\\g++.exe",
       "args": [
         "-g",
-        "-std=c++20",
+        "-std=c++2a",
         "\"${file}\"",
         "-o",
         "\"${fileDirname}\\${fileBasenameNoExtension}.exe\""
