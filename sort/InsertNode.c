@@ -3,7 +3,7 @@
 typedef int ElemType;
 
 // 0位为哨兵
-void insertNode(ElemType A[], int len)
+void insertSort(ElemType A[], int len)
 {
   for (int i = 2; i <= len; i++)
   {
@@ -56,7 +56,7 @@ int main(void)
 {
   ElemType A[] = {0, 3, 2, 9, 7, 0};
   ElemType B[] = {0, 3, 2, 9, 7, 0};
-  insertNode(A, 5);
+  insertSort(A, 5);
   insertNode2(B, 5);
   return 0;
 }
