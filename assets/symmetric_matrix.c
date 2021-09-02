@@ -4,12 +4,28 @@
 #define MAXSIZE 20
 #include <stdio.h>
 
-// 第i行，第j列,默认为上三角
+// 第i行，第j列,下三角
 int getPosition(int i, int j)
 {
-  if (i <= j)
-    return j * (j - 1) / 2 + i - 1;
+  int temp = i;
+  if (i < j)
+  {
+    i = j;
+    j = temp;
+  }
   return i * (i - 1) / 2 + j - 1;
+}
+
+// 上三角
+int getP2(int i, int j)
+{
+  int temp = i;
+  if (i > j)
+  {
+    i = j;
+    j = temp;
+  }
+  return (2 * ROW - i + 2) * (i - 1) / 2 + j - i + 1;
 }
 
 void compress(int data[][COLUMN], int copy[])
@@ -18,11 +34,8 @@ void compress(int data[][COLUMN], int copy[])
   {
     for (int j = 0; j < COLUMN; j++)
     {
-      if (i <= j)
-      {
-        int position = getPosition(i + 1, j + 1);
-        copy[position] = data[i][j];
-      }
+      int position = getP2(i + 1, j + 1);
+      copy[position] = data[i][j];
     }
   }
 }
@@ -41,7 +54,7 @@ int main(void)
   {
     for (int j = 0; j < COLUMN; j++)
     {
-      printf("%d,", copy[getPosition(i + 1, j + 1)]);
+      printf("%d,", copy[getP2(i + 1, j + 1)]);
     }
     puts("");
   }
