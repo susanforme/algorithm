@@ -23,6 +23,6 @@ int main(void)
 {
   char *s1 = "hello  world", *s2 = "word";
   int res = find_len_word(s1, s2);
-  printf("res is %d", res);
+  printf("res is %d.\n", res);
   return 0;
 }
