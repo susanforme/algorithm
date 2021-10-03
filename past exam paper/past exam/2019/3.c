@@ -1,20 +1,19 @@
 // 3矩阵相乘
 #include <stdio.h>
-#define COLUMN 4
-
-int multiply(int A[][COLUMN], int B[][COLUMN], int i, int len)
-{
-  int res = 0;
-  for (int j = 0; j < len; j++)
-    res += A[i][j] * B[j][i];
-  return res;
-}
+#define COLUMN 3
 
 void multiplyMatrix(int A[][COLUMN], int B[][COLUMN], int RES[][COLUMN], int len)
 {
   for (int i = 0; i < len; i++)
     for (int j = 0; j < COLUMN; j++)
-      RES[i][j] = multiply(A, B, i, len);
+    {
+      int res = 0;
+      for (int k = 0; k < len; k++)
+      {
+        res += A[i][k] * B[k][j];
+      }
+      RES[i][j] = res;
+    }
 }
 
 void printRes(int A[][COLUMN], int B[][COLUMN], int C[][COLUMN], int len)
@@ -32,11 +31,11 @@ void printRes(int A[][COLUMN], int B[][COLUMN], int C[][COLUMN], int len)
 
 int main(void)
 {
-  int len = 4, A[len][COLUMN];
+  int len = 3, A[len][COLUMN], t = 1;
   for (int i = 0; i < len; i++)
   {
     for (int j = 0; j < COLUMN; j++)
-      A[i][j] = 1;
+      A[i][j] = t++;
   }
   printRes(A, A, A, len);
   return 0;
