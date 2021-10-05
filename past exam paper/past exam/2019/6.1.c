@@ -60,7 +60,7 @@ bool insertList(LinkList list, int i, int e)
 void DeleteX(LinkList l, ElemType x, int *count)
 {
   LNode *p = l->next, *last = l;
-  int c;
+  int c = 0;
   while (p != NULL)
   {
     if (p->data == x)
