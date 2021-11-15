@@ -22,6 +22,7 @@ bool deleteDul(DList L, int i, ElemType *e)
       *e = p->data;
       prior->next = next;
       next->prior = prior;
+      free(p);
       return true;
     }
     p = p->next;

@@ -34,5 +34,5 @@
     "type_traits": "c",
     "limits": "c"
   },
-  "C_Cpp.errorSquiggles": "Disabled"
+  "C_Cpp.errorSquiggles": "Enabled"
 }
