@@ -1,30 +1,34 @@
 #include <stdio.h>
+#include <stdbool.h>
 #define MAXNUM 100
 
-void getData(int *A, int *len)
-{
-  while (scanf("%d", &A[*len]))
-    (*len)++;
-}
 // 升序排列数组
-int insert(int *A, int x, int *len)
+bool insert(int *A, int x, int len)
 {
-  int i = 0;
-  if (*len == 0)
+  int i = 0, j = len - 1, mid;
+  while (i <= j)
   {
-    A[0] = x;
-    (*len)++;
-    return 0;
+    mid = (i + j) / 2;
+    if (A[mid] < x)
+      i = mid + 1;
+    else if (A[mid] > x)
+      j = mid - 1;
+    else
+      return false;
   }
-  while (i < *len && A[i] <= x)
-    i++;
-  for (int j = *len; j >= i + 1; j--)
+  if (i == len)
+    A[i] = x;
+  else
   {
-    A[j] = A[j - 1];
+    int k = len;
+    while (k >= i)
+    {
+      A[k] = A[k - 1];
+      k--;
+    }
+    A[i] = x;
   }
-  A[i] = x;
-  (*len)++;
-  return i;
+  return true;
 }
 
 void printData(int *A, int len)
@@ -38,8 +42,10 @@ void printData(int *A, int len)
 int main(void)
 {
   int A[MAXNUM], len = 0;
-  getData(A, &len);
-  insert(A, 23, &len);
+  while (scanf("%d", &A[len]))
+    len++;
+  insert(A, 23, len);
+  len++;
   printData(A, len);
   return 0;
 }
