@@ -1,5 +1,7 @@
 // cosx的泰勒展开
 #include <math.h>
+#define PI 3.1415926
+
 int factorial(int n)
 {
   int res = 1;
@@ -10,28 +12,26 @@ int factorial(int n)
 
 double item(int i, int x)
 {
-  return pow(-1, i / 2) * pow(x, i) / factorial(i);
+  return pow(-1, i) * pow(x, i * 2) / factorial(i * 2);
 }
 
 double cos(double x)
 {
   int n = 1;
-  double res = 0;
+  double res = 0, itemData = 1;
   const double LOW = 1e-5;
-  while (1 / factorial(n) >= LOW)
-    n++;
-  for (int j = 0; j <= n; j += 2)
+  while (1 / factorial(2 * n) >= LOW)
   {
-    if (j == 0)
-      res == 1;
-    else
-      res += item(j, x);
+    res += itemData;
+    itemData = item(n, x);
+    n++;
   }
+  res += itemData;
   return res;
 }
 
 int main(void)
 {
-  double res = cos(4);
+  double res = cos(0);
   return 0;
 }
