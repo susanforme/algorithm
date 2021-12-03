@@ -32,7 +32,8 @@
     "_mingw_off_t.h": "c",
     "time.h": "c",
     "type_traits": "c",
-    "limits": "c"
+    "limits": "c",
+    "windows.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }

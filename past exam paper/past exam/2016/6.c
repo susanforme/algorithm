@@ -27,7 +27,7 @@ position cmpsubstr(char s1[], char s2[])
 
 int main(void)
 {
-  char s1[] = "qwer1234", s2[] = "4";
+  char s1[] = "were1234", s2[] = "123";
   position p = cmpsubstr(s1, s2);
   printf("%d", p);
   return 0;
