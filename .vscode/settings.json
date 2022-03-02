@@ -1,7 +1,7 @@
 {
   "C_Cpp.default.intelliSenseMode": "gcc-x64",
   "C_Cpp.default.compilerPath": "C:\\mingw64\\bin\\g++.exe",
-  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.default.cppStandard": "c++17",
   "debug.onTaskErrors": "abort",
   "files.associations": {
     "*.cjson": "jsonc",
@@ -33,7 +33,8 @@
     "time.h": "c",
     "type_traits": "c",
     "limits": "c",
-    "windows.h": "c"
+    "windows.h": "c",
+    "math.h": "c"
   },
   "C_Cpp.errorSquiggles": "Enabled"
 }
