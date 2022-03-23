@@ -1,3 +1,7 @@
 *.exe
 *.pdf
 test.c
+node_modules
+test.js
+package.json
+yarn.lock
